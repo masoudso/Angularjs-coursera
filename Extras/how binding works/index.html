@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> Here I keep the extras.</title>
+  </head>
+  <body>
+    here I haven't srcd the html to any angular js file
+    But I want to show "LetsTestIt" in the console
+    by using getAttribute
+      <div id="target" ng-app="letsTestIt">
+        <section> Section 1
+          <article>
+            Article 1
+          </article>
+        </section>
+      </div>
+      <script>
+        var letSee = document.getElementById('target');
+        console.log(letSee);
+        console.log(letSee.getAttribute('ng-app'));
+      </script>
+  </body>
+</html>
