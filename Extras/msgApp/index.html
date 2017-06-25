@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app='msgapp'>
+    <head>
+      <meta charset="utf-8">
+      <title>Expressions and Interpolations</title>
+      <script src="/../angular.min.js"></script>
+      <script src="app.js"></script>
+    </head>
+  <body>
+    <div ng-controller='myController'>
+      {{name}} says: <br>
+      {{ayandeh()}}
+      <div>
+        <button ng-click="changePic()">changePic</button><br>
+        <img ng-src="/../extras/Images/France_{{place}}.jpg" height="500" width="500">
+      </div>
+    </div>
+  </body>
+</html>
