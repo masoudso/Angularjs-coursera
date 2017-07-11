@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app = "filtApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Here I show how filters work in AngularJS!</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+
+  </head>
+  <body ng-controller = 'filtController'>
+    <div class="container-fluid bg-1 text-center">
+    <h3 class="margin">Masoud has always said:</h3>
+    <img ng-src="delta.jpg" class="img-responsive img-circle margin"
+         style="display:inline" alt="airplane" width="350" height="350">
+    <h4>If you ever doubt in exploring the world,<h4>
+    <h3>{{message()}}<h3>
+    </div>
+  </body>
+</html>
