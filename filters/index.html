@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+<!-- putting angularJS argument into my html -->
 <html ng-app = "filtApp">
   <head>
     <meta charset="utf-8">
@@ -6,14 +8,21 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-
   </head>
+  <style>
+    .color2{
+      color : blue;
+    }
+  </style>
+  <!-- defining my controller here -->
   <body ng-controller = 'filtController'>
     <div class="container-fluid bg-1 text-center">
     <h3 class="margin">Masoud has always said:</h3>
+    <!-- using ng-source for inserting my picture -->
     <img ng-src="delta.jpg" class="img-responsive img-circle margin"
          style="display:inline" alt="airplane" width="350" height="350">
     <h4>If you ever doubt in exploring the world,<h4>
+      <!-- message function in angular -->
     <h3>{{message()}}<h3>
     <h5>by the way, the airplane above costs about {{cost | currency }} million!</h5>
         <div>
@@ -21,8 +30,16 @@
           filter to change
           the type of aircraft in the second sentence below! look at the source
           code to see how it happens!<br><br>
-          {{saymessage()}}<br>
-          {{saySecMessage()}}
+          <!-- saymessage() function -->
+          Original sent.: {{saymessage()}}<br>
+          <!-- first filter -->
+          Filtered sent.: {{saySecMessage()}}<br>
+          <div class="color2">second filter I'm using here is inside my HTML code (not in app.js).
+          The word 'intercontinental' changes to 'European': </div>
+          <!-- second filter which is a call from HTML -->
+          <!-- saySecMessage is called, the sent. changes to Boeing777,
+                then the continent filter is called in HTML -->
+          {{saySecMessage() | continent : 'intercontinental' : 'European'}}
         </div><br>
     </div>
   </body>

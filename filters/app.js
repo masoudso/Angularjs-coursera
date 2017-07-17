@@ -2,7 +2,8 @@
   'use strict';
   angular.module('filtApp', [])
   .controller('filtController', filtController)
-  .filter('names', nameFilter);
+  .filter('names', nameFilter)
+  .filter('continent', contChangFilter);
 filtController.$inject = ['$scope', '$filter', 'namesFilter'];
 
 function filtController($scope, $filter, namesFilter){
@@ -32,6 +33,14 @@ function nameFilter(){
     input = input.replace("Airbus-a330" , "Boeing777");
     return input;
   };
+};
+
+function contChangFilter(){
+  return function(input, target, replace){
+    input = input || "";
+    input = input.replace(target, replace);
+    return input;
+  }
 };
 
 })();
